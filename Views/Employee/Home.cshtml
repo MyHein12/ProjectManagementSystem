@@ -1,0 +1,330 @@
+﻿@model IEnumerable<ProjectManagement.Models.ProjectDepartment>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>srtdash - ICO Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/metisMenu.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/css/typography.css">
+    <link rel="stylesheet" href="~/css/default-css.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<section>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a asp-action="index" style="max-width:220px"><img src="~/images/logoBlack.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li class="active">
+                                <a asp-controller="Employee" asp-action="Home"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                            </li>
+                            <li>
+                                <a asp-controller="Employee" asp-action="Mission"><i class="ti-harddrives"></i><span>Mission</span></a>
+                            </li>
+                            <li>
+                                <a asp-controller="Employee" asp-action="Timeline"><i class="ti-time"></i><span>Timeline</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <!--Notification-->
+                            <li class="dropdown">
+                                <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+                                    @{
+                                        var count = 0;
+                                        if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                if (noti.MissionId != null && noti.IsRead == false)
+                                                {
+                                                    count = count + 1;
+                                                }
+                                            }
+                                        }
+                                        <span>@count</span>
+                                        }
+                                </i>
+                                <div class="dropdown-menu bell-notify-box notify-box">
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <div class="nofity-list">
+                                        @{
+                                            if (ViewBag.Notifications != null)
+                                            {
+                                                foreach (var noti in ViewBag.Notifications)
+                                                {
+                                                    //TB duoc giao cho mission
+                                                    if (noti.MissionId != null && noti.DocumentId == null)
+                                                    {
+                                                        <a asp-controller="Manager" asp-action="MissionDetail" asp-route-id="@noti.MissionId" asp-route-noti="@noti.NotificationId" class="notify-item">
+                                                            <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
+                                                            <div class="notify-text">
+                                                                <p>@noti.Description</p>
+                                                                <span>Just Now</span>
+                                                            </div>
+                                                        </a>
+                                                    }
+                                                    //TB mission duoc giao da co nguoi uploads tai lieu
+                                                    if (noti.MissionId != null && noti.DocumentId != null)
+                                                    {
+                                                        <a asp-controller="Manager" asp-action="MissionDetail" asp-route-id="@noti.MissionId" asp-route-noti="@noti.NotificationId" class="notify-item">
+                                                            <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
+                                                            <div class="notify-text">
+                                                                <p>@noti.Description</p>
+                                                                <span>Just Now</span>
+                                                            </div>
+                                                        </a>
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                </div>
+
+
+                            </li>
+
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Dashboard</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="~/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@ViewContext.HttpContext.Session.GetString("FullName")<i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Information</a>
+                                <a asp-controller="Home" asp-action="ChangePassword" class="dropdown-item">Change password</a>
+                                <a asp-controller="Home" asp-action="Logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-6 mt-md-3 mb-3">
+                                <div class="card">
+                                    <a asp-controller="" asp-action="" class="seo-fact sbg1">
+                                        <div class="p-4 d-flex justify-content-between align-items-center">
+                                            <div class="seofct-icon"><i class="ti-stats-up"></i> In progress</div>
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                var totalWarningCount = Model.GroupBy(p => p.Project.ProjectId)
+                                                .Select(g => g.First())
+                                                .Count(p => p.Project.Status == "In Progress");
+                                                <h2>@totalWarningCount</h2>
+                                            }
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-md-3 mb-3">
+                                <div class="card">
+                                    <a asp-controller="" asp-action="" class="seo-fact sbg2">
+                                        <div class="p-4 d-flex justify-content-between align-items-center">
+                                            <div class="seofct-icon"><i class="ti-check-box"></i> Complete</div>
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                var totalWarningCount = Model.GroupBy(p => p.Project.ProjectId)
+                                                .Select(g => g.First())
+                                                .Count(p => p.Project.Status == "Complete");
+                                                <h2>@totalWarningCount</h2>
+                                            }
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-md-3">
+                                <div class="card">
+                                    <a asp-controller="" asp-action="" class="seo-fact sbg3">
+                                        <div class="p-4 d-flex justify-content-between align-items-center">
+                                            <div class="seofct-icon"><i class="ti-direction-alt"></i> Pending</div>
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                var totalWarningCount = Model.GroupBy(p => p.Project.ProjectId)
+                                                .Select(g => g.First())
+                                                .Count(p => p.Project.Status == "Pending");
+                                                <h2>@totalWarningCount</h2>
+                                            }
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-md-3">
+                                <div class="card">
+                                    <a asp-controller="" asp-action="" class="seo-fact sbg4">
+                                        <div class="p-4 d-flex justify-content-between align-items-center">
+                                            <div class="seofct-icon"><i class="ti-alert"></i> Warning</div>
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                var totalWarningCount = Model.GroupBy(p => p.Project.ProjectId)
+                                                .Select(g => g.First())
+                                                .Count(p => p.Project.Status == "Warning");
+                                                <h2>@totalWarningCount</h2>
+                                            }
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sales report area start -->
+                    <div class="sales-report-area mt-5 mb-5">
+                        <div class="row">
+                            @if (Model != null && Model.Any())
+                            {
+                                var uniqueProjects = Model.GroupBy(p => p.Project.ProjectId)
+                                .Select(g => g.First())
+                                .ToList();
+                                foreach (var PD in uniqueProjects)
+                                {
+                                    if (PD.Project != null)
+                                    {
+                                        <div class="col-md-4">
+                                            <a asp-controller="Manager" asp-action="ProjectDetail" asp-route-id="@PD.Project.ProjectId" class="single-report mb-xs-30">
+                                                <div class="s-report-inner pr--20 pt--30 mb-3">
+                                                    <div class="s-report-title d-flex justify-content-between">
+                                                        <h3 class="header-title mb-0">@PD.Project.Name</h3>
+                                                        @switch (@PD.Project.Status)
+                                                        {
+                                                            case "In Progress":
+                                                                <p class="status-p bg-primary" style="color:white">@PD.Project.Status</p>
+                                                                break;
+                                                            case "Complete":
+                                                                <p class="status-p bg-success" style="color:white">@PD.Project.Status</p>
+                                                                break;
+                                                            case "Pending":
+                                                                <p class="status-p bg-warning" style="color:white">@PD.Project.Status</p>
+                                                                break;
+                                                            case "Warning":
+                                                                <p class="status-p bg-danger" style="color:white">@PD.Project.Status</p>
+                                                                break;
+                                                        }
+                                                    </div>
+                                                    <div class="d-flex justify-content-between pb-2">
+                                                        <span style="color: red">Due Date: @PD.Project.PlanedEndDate.ToString("dd/MM/yyyy hh:mm tt")</span>
+                                                    </div>
+                                                    @{
+                                                        var missions = (List<ProjectManagement.Models.Mission>)ViewBag.Missions;
+                                                        if (missions != null && missions.Any())
+                                                        {
+                                                            var projectMissions = missions.Where(m => m.ProjectId == PD.Project.ProjectId);
+                                                            if (projectMissions != null)
+                                                            {
+                                                                <div style="color: black">Number of missions: @projectMissions.Count()</div>
+                                                            }
+                                                        }
+                                                    }
+                                                    <div style="color: black">Number of participants: </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                    <!-- sales report area end -->
+                    <!-- row area start-->
+                </div>
+            </div>
+            <!-- main content area end -->
+        </div>
+    </div>
+    <!-- page container area end -->
+    <!-- jquery latest version -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="~/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="~/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+</section>

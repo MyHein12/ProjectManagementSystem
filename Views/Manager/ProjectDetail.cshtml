@@ -1,0 +1,510 @@
+﻿@model IEnumerable<ProjectManagement.Models.ProjectDepartment>;
+@{
+    ViewData["Title"] = "Project Details";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/metisMenu.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/css/typography.css">
+    <link rel="stylesheet" href="~/css/default-css.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--Multi Select-->
+    <!-- Styles -->
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <!-- Or for RTL support -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+    
+</head>
+
+<section>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a asp-action="index" style="max-width:220px"><img src="~/images/logoBlack.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu" style="padding: 0;">
+                            <li>
+                                <a asp-controller="Manager" asp-action="Home" style="text-decoration: none;"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                            </li>
+                            <li class="active">
+                                <a asp-controller="Manager" asp-action="Project" style="text-decoration: none;"><i class="ti-wallet"></i><span>Project</span></a>
+                            </li>
+                            <li>
+                                <a asp-controller="Manager" asp-action="Mission" style="text-decoration: none;"><i class="ti-harddrives"></i><span>Mission</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <!--Notification-->
+                            <li class="dropdown">
+                                <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+                                    @{
+                                        var count = 0;
+                                        if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                if (noti.ProjectId != null && noti.IsRead == false)
+                                                {
+                                                    count = count + 1;
+                                                }
+                                            }
+                                        }
+                                        <span>@count</span>
+                                    }
+                                </i>
+                                <div class="dropdown-menu bell-notify-box notify-box">
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <div class="nofity-list">
+                                        @if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                var notifyClass = noti.ProjectId != null && noti.MissionId == null ? "ti-comments-smiley btn-info" : "ti-key btn-danger";
+                                                var notifyBackground = noti.IsRead == false && noti.ProjectId != null ? "background-color:#ccc; font-weight:bold" : "";
+
+                                                <a asp-controller="Manager" asp-action="ProjectDetail" asp-route-id="@noti.ProjectId" asp-route-noti="@noti.NotificationId" class="notify-item">
+                                                    <div class="notify-thumb"><i class="@notifyClass"></i></div>
+                                                    <div class="notify-text" style="@notifyBackground">
+                                                        <p>@noti.Description</p>
+                                                        <span>Just Now</span>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Project Details</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="~/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@ViewContext.HttpContext.Session.GetString("FullName")<i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a asp-controller="Home" asp-action="Logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <!-- page title area end -->
+            <a href="javascript:history.back()" class="btn btn-link">Go Back</a>
+
+            <div class="main-content-inner">
+                <div class="row">
+                    <div class="col-lg-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="invoice-area">
+                                    @{
+                                        var uniquePD = Model.GroupBy(p => p.Project.ProjectId)
+                                        .Select(g => g.First())
+                                        .FirstOrDefault();
+
+
+                                        <div class="invoice-head">
+                                            <div class="row">
+                                                <div class="iv-left col-6">
+                                                    <span>@uniquePD.Project.Name</span>
+                                                </div>
+                                                <div class="iv-right col-6 text-md-right">
+                                                    <span>#@uniquePD.Project.ProjectId</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <div class="invoice-address">
+                                                    @switch (@uniquePD.Project.Status)
+                                                    {
+                                                        case "In Progress":
+                                                            <h5 class="status-p bg-primary" style="padding: 12px;">@uniquePD.Project.Status</h5>
+                                                            break;
+                                                        case "Complete":
+                                                            <h5 class="status-p bg-success" style="padding: 12px;">@uniquePD.Project.Status</h5>
+                                                            break;
+                                                        case "Pending":
+                                                            <h5 class="status-p bg-warning" style="padding: 12px;">@uniquePD.Project.Status</h5>
+                                                            break;
+                                                        case "Warning":
+                                                            <h5 class="status-p bg-danger" style="padding: 12px;">@uniquePD.Project.Status</h5>
+                                                            break;
+                                                    }
+                                                    <p><span style="font-weight:bold">Description: </span> @uniquePD.Project.Description</p>
+                                                    <br>
+                                                    <p><span style="font-weight:bold">Responsibility: </span> @Model.Where(x => x.IsCollaborated == false).Select(s => s.Department.Name).FirstOrDefault()</p>
+                                                    <br>
+                                                    <p style="font-weight:bold">Collaborators:</p>
+                                                    @if (Model != null)
+                                                    {
+                                                        foreach (var PD in Model)
+                                                        {
+                                                            if (PD.IsCollaborated)
+                                                            {
+                                                                <p>@PD.Department.Name</p>
+                                                            }
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-md-right">
+                                                <ul class="invoice-date">
+                                                    <li>Planed Start Date : @uniquePD.Project.PlanedStartDate.ToString("dd/MM/yyyy hh:mm tt")</li>
+                                                    <li>Planed End Date : @uniquePD.Project.PlanedEndDate.ToString("dd/MM/yyyy hh:mm tt")</li>
+                                                </ul>
+                                                <ul>
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn btn-primary createProject" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                        Edit Deadline
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="editModalLabel">Edit Deadline</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form asp-controller="Manager" asp-action="UpdateDeadline" asp-route-projectId="@uniquePD.Project.ProjectId" method="post">
+                                                                        <div class="form-group">
+                                                                            <label for="newDeadline" class="col-form-label">End Date</label>
+                                                                            <input class="form-control" type="datetime-local" name="newDeadline" id="newDeadline" required>
+                                                                        </div>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary btnCreate">Change</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--End modal-->
+                                                </ul>
+                                                <ul class="invoice-date">
+                                                    <li style="color: red">Actual End Date: @(uniquePD.Project.ActualEndDate == null ? "updating" : uniquePD.Project.ActualEndDate.Value.ToString("dd/MM/yyyy hh:mm tt"))</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    }
+
+
+
+                                    <div class="table-responsive mt-5">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary createProject" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            New Mission
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">New Mission</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form asp-controller="Manager" asp-action="ProjectDetail" asp-route-id="@uniquePD.Project.ProjectId" method="post">
+                                                            <div class="form-group">
+                                                                <label for="MissionName" class="col-form-label">Title</label>
+                                                                <input class="form-control" type="text" id="MissionName" name="MissionName" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="Description" class="col-form-label">Description</label>
+                                                                <textarea class="form-control" id="Description" name="Description" required></textarea>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="StartDate" class="col-form-label">Start Date</label>
+                                                                <input class="form-control" type="datetime-local" name="StartDate" id="StartDate" required>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="EndDate" class="col-form-label">End Date</label>
+                                                                <input class="form-control" type="datetime-local" name="EndDate" id="EndDate" required>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <select class="form-select" id="multiple-select-field" data-placeholder="Choose employees" name="SelectedEmployees" multiple>
+                                                                    @{
+                                                                        if (ViewBag.Employees != null)
+                                                                        {
+                                                                            foreach (var emp in ViewBag.Employees)
+                                                                            {
+                                                                                <option value="@emp.EmployeeId">@emp.FullName</option>
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                </select>   
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary btnCreate">Add</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--End modal-->
+                                        @if (ViewBag.progress != null)
+                                        {
+                                            if (ViewBag.progress == 100)
+                                            {
+                                                <div class="progress m-3">
+                                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="progress m-3">
+                                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: @(ViewBag.progress ?? 0)%" aria-valuenow="@ViewBag.progress" aria-valuemin="0" aria-valuemax="100">@ViewBag.progress %</div>
+                                                </div>
+                                            }
+                                        }
+
+
+                                        <table class="table table-hover progress-table text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                    <th class="text-center" style="width: 10%;">Mission ID</th>
+                                                    <th class="text-center" style="width: 40%; min-width: 130px;">Title</th>
+                                                    <th class="text-center" style="width: 20%;">Due Date</th>
+                                                    <th class="text-center" style="width: 15%;">Status</th>
+                                                    <th class="text-center" style="width: 15%;">Detail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (ViewBag.Missions != null && ViewBag.Missions.Count > 0)
+                                                {
+                                                    @foreach (var mission in ViewBag.Missions)
+                                                    {
+
+                                                        <tr>
+                                                            <td>@mission.MissionId</td>
+                                                            <td>@mission.Title</td>
+                                                            <td>@mission.PlanedEndDate</td>
+                                                            @switch(@mission.Status)
+                                                            {
+                                                                case "To Do":
+                                                                    <td><span class="status-p bg-secondary">@mission.Status</span></td>
+                                                                    break;
+                                                                case "In Progress":
+                                                                    <td><span class="status-p bg-primary">@mission.Status</span></td>
+                                                                    break;
+                                                                case "Done":
+                                                                    <td><span class="status-p bg-success">@mission.Status</span></td>
+                                                                    break;
+                                                            }
+                                                            <td>
+                                                                <ul class="d-flex justify-content-center">
+                                                                    <li class="mr-3"><a asp-controller="Manager" asp-action="MissionDetail" asp-route-id="@mission.MissionId" class="text-secondary"><i class="fa fa-edit"></i></a></li>
+                                                                    @*<li><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>*@
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="5">No mission available.</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="4">Total missions:</td>
+                                                    <td>@ViewBag.Missions.Count</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="invoice-buttons text-right">
+                                    @{
+                                        if (uniquePD.Project.Status == "Pending")
+                                        {
+                                            <a asp-controller="Manager" asp-action="Confirm" asp-route-projectId="@uniquePD.Project.ProjectId" class="invoice-btn">Confirm</a>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main content area end -->
+
+        </div>
+    </div>
+    <!-- page container area end -->
+    
+    <!-- jquery latest version -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="~/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="~/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $('#multiple-select-field').select2({
+            theme: "bootstrap-5",
+            width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+            placeholder: $(this).data('placeholder'),
+            closeOnSelect: false,
+        });
+    </script>
+    
+    <script>
+        @{
+            // Convert the dates to the ISO 8601 format (yyyy-MM-ddTHH:mm:ss)
+            var projectStartDate = uniquePD.Project.PlanedStartDate.ToString("yyyy-MM-ddTHH:mm:ss");
+            var projectEndDate = uniquePD.Project.PlanedEndDate.ToString("yyyy-MM-ddTHH:mm:ss");
+        }
+
+            function validateDates() {
+                // Get StartDate and EndDate values
+                var startDate = new Date(document.getElementById("StartDate").value);
+                var endDate = new Date(document.getElementById("EndDate").value);
+                var newDeadline = new Date(document.getElementById("newDeadline").value);
+
+
+                // Convert project start and end dates to Date objects
+                var projectStartDate = new Date("@projectStartDate");
+                var projectEndDate = new Date("@projectEndDate");
+
+                if (newDeadline < projectEndDate) {
+                    alert("New deadline must before old deadline.");
+                    return false;
+                } 
+                // Check if StartDate is in the past
+                if (startDate < projectStartDate) {
+                    alert("Mission Start Date cannot be before Project Start Date");
+                    return false;
+                }
+
+                // Check if EndDate is after StartDate
+                if (endDate <= startDate) {
+                    alert("Mission End Date must be after Start Date");
+                    return false;
+                }
+
+                // Check if EndDate is after Project EndDate
+                if (endDate > projectEndDate) {
+                    alert("Mission End Date cannot be after Project End Date");
+                    return false;
+                }
+
+                return true;
+            }
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            if (!validateDates()) {
+                e.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+
+</section>

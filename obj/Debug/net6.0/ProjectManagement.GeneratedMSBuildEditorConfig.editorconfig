@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjectManagement
+build_property.RootNamespace = ProjectManagement
+build_property.ProjectDir = D:\TDTU\HK2_2324\SDC\CK\ProjectManagement\ProjectManagement\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\TDTU\HK2_2324\SDC\CK\ProjectManagement\ProjectManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/CEO/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ0VPXEhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Employee/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Employee/Mission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTWlzc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Employee/MissionDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTWlzc2lvbkRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Home/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Home/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Home/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Home/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/HR/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSFJcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Manager/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Manager/Mission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxNaXNzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Manager/MissionDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxNaXNzaW9uRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Manager/Project.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Manager/ProjectDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlclxQcm9qZWN0RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/TDTU/HK2_2324/SDC/CK/ProjectManagement/ProjectManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kdbm0rem72

@@ -1,0 +1,347 @@
+﻿@model IEnumerable<ProjectManagement.Models.EmployeeMission>;
+@{
+    ViewData["Title"] = "Mission Details";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/metisMenu.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/css/typography.css">
+    <link rel="stylesheet" href="~/css/default-css.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<section>
+    @if (!string.IsNullOrEmpty(TempData["success"] as string))
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 0">
+            @TempData["success"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a asp-action="index" style="max-width:220px"><img src="~/images/logoBlack.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li>
+                                <a asp-controller="Manager" asp-action="Home"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                            </li>
+                            <li>
+                                <a asp-controller="Manager" asp-action="Project"><i class="ti-wallet"></i><span>Project</span></a>
+                            </li>
+                            <li>
+                                <a asp-controller="Manager" asp-action="Mission"><i class="ti-harddrives"></i><span>Mission</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <!--Notification-->
+                            <li class="dropdown">
+                                <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+                                    @{
+                                        var count = 0;
+                                        if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                if (noti.ProjectId != null && noti.IsRead == false)
+                                                {
+                                                    count = count + 1;
+                                                }
+                                            }
+                                        }
+                                        <span>@count</span>
+                                    }
+                                </i>
+                                <div class="dropdown-menu bell-notify-box notify-box">
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <div class="nofity-list">
+                                        @if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                var notifyClass = noti.ProjectId != null && noti.MissionId == null ? "ti-comments-smiley btn-info" : "ti-key btn-danger";
+                                                var notifyBackground = noti.IsRead == false && noti.ProjectId != null ? "background-color:#ccc; font-weight:bold" : "";
+
+                                                <a asp-controller="Manager" asp-action="ProjectDetail" asp-route-id="@noti.ProjectId" asp-route-noti="@noti.NotificationId" class="notify-item">
+                                                    <div class="notify-thumb"><i class="@notifyClass"></i></div>
+                                                    <div class="notify-text" style="@notifyBackground">
+                                                        <p>@noti.Description</p>
+                                                        <span>Just Now</span>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Mission Details</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="~/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@ViewContext.HttpContext.Session.GetString("FullName")<i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Message</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a asp-controller="Home" asp-action="Logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                <div class="row">
+                    <div class="col-lg-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="invoice-area">
+                                    @{
+                                        var uniqueEM = Model.GroupBy(p => p.Mission.MissionId)
+                                        .Select(g => g.First())
+                                        .FirstOrDefault();
+
+
+                                        <div class="invoice-head">
+                                            <div class="row">
+                                                <div class="iv-left col-6">
+                                                    <span>@uniqueEM.Mission.Title</span>
+                                                </div>
+                                                <div class="iv-right col-6 text-md-right">
+                                                    <span>#@uniqueEM.Mission.MissionId</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <div class="invoice-address">
+                                                    @switch (@uniqueEM.Mission.Status)
+                                                    {
+                                                        case "In Progress":
+                                                            <h5 class="status-p bg-primary" style="padding: 12px;">@uniqueEM.Mission.Status</h5>
+                                                            break;
+                                                        case "Done":
+                                                            <h5 class="status-p bg-success" style="padding: 12px;">@uniqueEM.Mission.Status</h5>
+                                                            break;
+                                                        case "To Do":
+                                                            <h5 class="status-p bg-secondary" style="padding: 12px;">@uniqueEM.Mission.Status</h5>
+                                                            break;
+                                                    }
+                                                    <p><span style="font-weight:bold">Description: </span> @uniqueEM.Mission.Description</p>
+                                                    <p><span style="font-weight:bold">Employees: </span></p>
+                                                        
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-md-right">
+                                                <ul class="invoice-date">
+                                                    <li>Planed Start Date : @uniqueEM.Mission.PlanedStartDate.ToString("dd/MM/yyyy hh:mm tt")</li>
+                                                    <li>Planed End Date : @uniqueEM.Mission.PlanedEndDate.ToString("dd/MM/yyyy hh:mm tt")</li>
+                                                </ul>
+                                                <ul class="invoice-date">
+                                                    <li style="color: red">Actual Start Date: @(uniqueEM.Mission.ActualStartDate == null ? "updating" : uniqueEM.Mission.ActualStartDate.Value.ToString("dd/MM/yyyy hh:mm tt"))</li>
+                                                    <li style="color: red">Actual End Date: @(uniqueEM.Mission.ActualEndDate == null ? "updating" : uniqueEM.Mission.ActualEndDate.Value.ToString("dd/MM/yyyy hh:mm tt"))</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        //table of mission
+                                        <div class="single-table mt-3">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width: 20%; font-weight: bold">Status</td>
+                                                            <td>
+                                                                @switch (@uniqueEM.Mission.Status)
+                                                                {
+                                                                    case "In Progress":
+                                                                        <p class="status-p bg-primary">@uniqueEM.Mission.Status</p>
+                                                                        break;
+                                                                    case "Done":
+                                                                        <p class="status-p bg-success">@uniqueEM.Mission.Status</p>
+                                                                        break;
+                                                                    case "To Do":
+                                                                        <p class="status-p bg-secondary">@uniqueEM.Mission.Status</p>
+                                                                        break;
+                                                                }
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 20%; font-weight: bold">Time remaining</td>
+                                                            @{
+                                                                if (ViewBag.Status != null)
+                                                                {
+                                                                    switch (ViewBag.Status)
+                                                                    {
+                                                                        case "Normal":
+                                                                            <td>@ViewBag.TimeRemain</td>
+                                                                            break;
+                                                                        case "Late":
+                                                                            <td class="table-danger">@ViewBag.TimeRemain</td>
+                                                                            break;
+                                                                        case "Early":
+                                                                            <td class="table-success">@ViewBag.TimeRemain</td>
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            }
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width: 20%; font-weight: bold">Due date</td>
+                                                            <td>@uniqueEM.Mission.PlanedEndDate.ToString("dddd, dd MMMM yyyy, h:mm tt")</td>
+                                                        </tr>
+                                                        @{
+                                                            if (ViewBag.Document != null)
+                                                            {
+                                                                <tr>
+                                                                    <td style="width: 20%; font-weight: bold">Last modified</td>
+                                                                    <td class="table-success">@ViewBag.Document.CreatedDate.ToString("dd MMMM yyyy, h:mm tt")</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 20%; font-weight: bold">Related documentation</td>
+                                                                    <td style="font-size:large; font-weight:bold; display: flex; justify-content:space-between">
+                                                                        @ViewBag.Document.Name
+                                                                        <div>
+                                                                            <a asp-controller="Home" asp-action="Downloads" asp-route-docId="@ViewBag.Document.DocumentId">
+                                                                                <i class="ti-cloud-down" style="font-size: xx-large;"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                            else
+                                                            {
+                                                                <tr>
+                                                                    <td style="width: 20%; font-weight: bold">Last modified</td>
+                                                                    <td class="table-active"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 20%; font-weight: bold">Related documentation</td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="card">
+                            <div class="card-body">
+                    
+                            </div>
+                        </div>*@
+
+                        
+                    
+                </div>
+            </div>
+            <!-- main content area end -->
+
+        </div>
+    </div>
+    <!-- page container area end -->
+    <!-- jquery latest version -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="~/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="~/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+</section>

@@ -1,0 +1,589 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ProjectManagement.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProjectManagement.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\default-css.css",
+      "PackagePath": "staticwebassets\\css\\default-css.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\metisMenu.css",
+      "PackagePath": "staticwebassets\\css\\metisMenu.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\css\\themify-icons.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\css\\typography.css",
+      "PackagePath": "staticwebassets\\css\\typography.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\fonts\\themify.eot"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\fonts\\themify.svg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\author\\author-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\author\\author-img1.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\author\\author-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\author\\author-img2.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\author\\author-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\author\\author-img3.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\author\\author-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\author\\author-img4.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\author\\avatar.png",
+      "PackagePath": "staticwebassets\\images\\author\\avatar.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\bg\\singin-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\bg\\singin-bg.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\blog\\post-thumb1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\post-thumb1.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\blog\\post-thumb2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\post-thumb2.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img1.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img1.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img10.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img10.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img2.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img2.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img3.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img3.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img4.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img4.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img5.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img5.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img6.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img6.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img7.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img7.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img8.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img8.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\card\\card-img9.jpg",
+      "PackagePath": "staticwebassets\\images\\card\\card-img9.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\Thumbs.db",
+      "PackagePath": "staticwebassets\\images\\icon\\Thumbs.db"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\loader.gif",
+      "PackagePath": "staticwebassets\\images\\icon\\loader.gif"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\Thumbs.db",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\Thumbs.db"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\icon1.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\icon1.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\icon2.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\icon2.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\icon3.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\icon3.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\icon4.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\icon4.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\trends-down-icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\trends-down-icon.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\trends-up-icon.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\trends-up-icon.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\triangle-down.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\triangle-down.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\icon\\market-value\\triangle-up.png",
+      "PackagePath": "staticwebassets\\images\\icon\\market-value\\triangle-up.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\logoBlack.png",
+      "PackagePath": "staticwebassets\\images\\logoBlack.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\logoWhite.png",
+      "PackagePath": "staticwebassets\\images\\logoWhite.png"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\media\\media1.jpg",
+      "PackagePath": "staticwebassets\\images\\media\\media1.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\media\\media2.jpg",
+      "PackagePath": "staticwebassets\\images\\media\\media2.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\team\\team-author1.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-author1.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\team\\team-author2.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-author2.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\team\\team-author3.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-author3.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\team\\team-author4.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-author4.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\images\\team\\team-author5.jpg",
+      "PackagePath": "staticwebassets\\images\\team\\team-author5.jpg"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\bar-chart.js",
+      "PackagePath": "staticwebassets\\js\\bar-chart.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\jquery.slimscroll.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slimscroll.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\line-chart.js",
+      "PackagePath": "staticwebassets\\js\\line-chart.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\maps.js",
+      "PackagePath": "staticwebassets\\js\\maps.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\metisMenu.min.js",
+      "PackagePath": "staticwebassets\\js\\metisMenu.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\pie-chart.js",
+      "PackagePath": "staticwebassets\\js\\pie-chart.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\js\\plugins.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\vendor\\jquery-2.2.4.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\jquery-2.2.4.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\js\\vendor\\modernizr-2.8.3.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\modernizr-2.8.3.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\52100196.zip",
+      "PackagePath": "staticwebassets\\uploads\\52100196.zip"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\52100196_52100342_52100177_52100337_52100907.txt",
+      "PackagePath": "staticwebassets\\uploads\\52100196_52100342_52100177_52100337_52100907.txt"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\Book1.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\Book1.xlsx"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\CK.zip",
+      "PackagePath": "staticwebassets\\uploads\\CK.zip"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\CS4_52100196.docx",
+      "PackagePath": "staticwebassets\\uploads\\CS4_52100196.docx"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\FromCEO.docx",
+      "PackagePath": "staticwebassets\\uploads\\FromCEO.docx"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\Report_ESDC.docx",
+      "PackagePath": "staticwebassets\\uploads\\Report_ESDC.docx"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\attachedFileForProject.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\attachedFileForProject.xlsx"
+    },
+    {
+      "Id": "D:\\TDTU\\HK2_2324\\SDC\\CK\\ProjectManagement\\ProjectManagement\\wwwroot\\uploads\\lab02_bestfirstsearch.py",
+      "PackagePath": "staticwebassets\\uploads\\lab02_bestfirstsearch.py"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ProjectManagement.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ProjectManagement.props",
+      "PackagePath": "build\\ProjectManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ProjectManagement.props",
+      "PackagePath": "buildMultiTargeting\\ProjectManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ProjectManagement.props",
+      "PackagePath": "buildTransitive\\ProjectManagement.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

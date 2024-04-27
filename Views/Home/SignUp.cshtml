@@ -1,0 +1,156 @@
+﻿@model IEnumerable<ProjectManagement.Models.Department>;
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Sign up - srtdash</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="~/images/icon/favicon.ico">
+        <link rel="stylesheet" href="~/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <link rel="stylesheet" href="~/css/themify-icons.css">
+        <link rel="stylesheet" href="~/css/metisMenu.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/slicknav.min.css">
+        <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="~/css/typography.css">
+        <link rel="stylesheet" href="~/css/default-css.css">
+        <link rel="stylesheet" href="~/css/styles.css">
+        <link rel="stylesheet" href="~/css/responsive.css">
+        <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+
+    <style>
+        select {
+            border-radius: 5px; /* Điều chỉnh giá trị để tăng hoặc giảm độ cong */
+            padding: 5px;
+            border-color: #7e74ff;
+            cursor: pointer;
+        }
+    </style>
+    <section>
+        @if (!string.IsNullOrEmpty(ViewBag.error))
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin: 0">
+                @ViewBag.error
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        <div id="preloader">
+            <div class="loader"></div>
+        </div>
+        <div class="login-area">
+            <div class="container">
+                <div class="login-box ptb--100">
+                    <form asp-controller="Home" asp-action="SignUp" method="post">
+                        <div class="login-form-head">
+                            <h4>Sign up</h4>
+                            <p>Hello. Sign up and Join with Us.</p>
+                        </div>
+                        <div class="login-form-body">
+                            <div class="form-gp">
+                                <label for="InputName">Full Name</label>
+                                <input type="text" id="InputName" name="InputName" required>
+                                <i class="ti-user"></i>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="form-gp">
+                                <label for="InputEmail">Email address</label>
+                                <input type="email" id="InputEmail" name="InputEmail" required>
+                                <i class="ti-email"></i>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="form-gp">
+                                @*<label for="InputDepartment">Department: </label>*@
+                                <select id="InputDepartment" name="InputDepartment" required>
+                                    @if (Model != null)
+                                    {
+                                        foreach (var department in Model)
+                                        {
+                                            <option value="@department.DepartmentId">@department.Name</option>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="" disabled>No departments available</option>
+                                    }
+                                </select>
+                                <i class="ti-briefcase"></i>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="form-gp">
+                                <label for="InputPhone">Phone</label>
+                                <input type="tel" id="InputPhone" name="InputPhone">
+                                <i class="ti-mobile"></i>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="form-gp">
+                                <label for="InputPassword">Password</label>
+                                <input type="password" id="InputPassword" name="InputPassword" required>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="form-gp">
+                                <label for="ConfirmPassword">Confirm Password</label>
+                                <input type="password" id="ConfirmPassword" name="ConfirmPassword" required>
+                                <div class="text-danger"></div>
+                            </div>
+                            <div class="submit-btn-area">
+                                <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            </div>
+                            <div class="form-footer text-center mt-5">
+                                <p class="text-muted">Don't have an account? <a asp-controller="Home" asp-action="SignIn">Sign in</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- jquery latest version -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+
+    <!-- others plugins -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#form_submit').click(function (event) {
+                var password = $('#InputPassword').val();
+                var confirmPassword = $('#ConfirmPassword').val();
+
+                // Kiểm tra mật khẩu và mật khẩu xác nhận
+                if (password !== confirmPassword) {
+                    alert('Password and Confirm Password do not match.');
+                    event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút "Submit"
+                    return false; // Ngăn form submit nếu mật khẩu không khớp
+                }
+
+                // Kiểm tra mật khẩu theo các tiêu chí
+                var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+                if (!regex.test(password)) {
+                    alert('Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.');
+                    event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút "Submit"
+                    return false; // Ngăn form submit nếu mật khẩu không đáp ứng các tiêu chí
+                }
+
+                // Nếu mọi thứ đều hợp lệ, cho phép form submit
+                return true;
+            });
+        });
+    </script>
+</body>

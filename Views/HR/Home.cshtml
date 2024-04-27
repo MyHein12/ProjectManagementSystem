@@ -1,0 +1,366 @@
+﻿@model IEnumerable<ProjectManagement.Models.Employee>;
+@{
+    ViewData["Title"] = "Manage Employee";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Datatable - srtdash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/metisMenu.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/slicknav.min.css">
+    <!-- amcharts css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/css/typography.css">
+    <link rel="stylesheet" href="~/css/default-css.css">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    @if (!string.IsNullOrEmpty(TempData["success"] as string))
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 0">
+                @TempData["success"]
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+    @if (!string.IsNullOrEmpty(ViewBag.success))
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 0">
+            @ViewBag.success
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(ViewBag.error))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin: 0">
+            @ViewBag.error
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container" style="padding-left: 0;">
+        <!-- main content area start -->
+        <div class="main-content">
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                            <!--Notification-->
+                            <li class="dropdown">
+                                <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
+                                    @{
+                                        var count = 0;
+                                        if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                if (noti.IsRead == false)
+                                                {
+                                                    count = count + 1;
+                                                }
+                                            }
+                                        }
+                                        <span>@count</span>
+                                    }
+                                </i>
+                                <div class="dropdown-menu bell-notify-box notify-box">
+                                    <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                                    <div class="nofity-list">
+                                        @if (ViewBag.Notifications != null)
+                                        {
+                                            foreach (var noti in ViewBag.Notifications)
+                                            {
+                                                var notifyBackground = noti.IsRead == false ? "background-color:#ccc; font-weight:bold" : "";
+
+                                                <a asp-controller="HR" asp-action="UpdateIsRead" asp-route-noti="@noti.NotificationId" class="notify-item">
+                                                    <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
+                                                    <div class="notify-text" style="@notifyBackground">
+                                                        <p>@noti.Description</p>
+                                                        <span>Just Now</span>
+                                                    </div>
+                                                </a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="full-view"><i class="ti-fullscreen"></i></li>
+                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Manage Employee</h4>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="~/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@ViewContext.HttpContext.Session.GetString("FullName")<i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a asp-controller="Home" asp-action="ChangePassword" class="dropdown-item">Change password</a>
+                                <a asp-controller="Home" asp-action="Logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- page title area end -->
+            <div class="main-content-inner">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary createProject m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    New Employee
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">New Employee</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form asp-controller="HR" asp-action="Home" method="post">
+                                    <div class="form-group">
+                                        <label for="InputName" class="col-form-label">Full Name</label>
+                                        <input class="form-control" type="text" id="InputName" name="InputName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputEmail" class="col-form-label">Email address</label>
+                                        <input class="form-control" type="email" id="InputEmail" name="InputEmail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputDepartment" class="col-form-label">Department</label>
+                                        <select class="custom-select" id="InputDepartment" name="InputDepartment" required>
+                                            @if (ViewBag.Department != null)
+                                            {
+                                                foreach (var department in @ViewBag.Department)
+                                                {
+                                                    <option value="@department.DepartmentId">@department.Name</option>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <option value="" disabled>No departments available</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputRole" class="col-form-label">Role</label>
+                                        <select class="custom-select" id="InputRole" name="InputRole" required>
+                                            @if (ViewBag.Role != null)
+                                            {
+                                                foreach (var role in ViewBag.Role)
+                                                {
+                                                    <option value="@role.RoleId">@role.Name</option>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <option value="" disabled>No roles available</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="InputPhone" class="col-form-label">Phone</label>
+                                        <input class="form-control" type="tel" id="InputPhone" name="InputPhone" required>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary btnCreate">Create</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End modal-->
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary createProject m-3" data-bs-toggle="modal" data-bs-target="#departmentModal">
+                    Department
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="departmentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="departmentModalLabel">New Department</h5>
+                                @*<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>*@
+                            </div>
+                            <div class="modal-body">
+                                <form asp-controller="HR" asp-action="AddDepartment" method="post">
+                                    <div class="form-group">
+                                        <label for="DepartmentName" class="col-form-label">Department Name</label>
+                                        <input class="form-control" type="text" id="DepartmentName" name="DepartmentName" required>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary btnCreate">Add</button>
+                                    </div>
+
+                                    <ul class="list-group">
+                                        @if (ViewBag.Department != null)
+                                        {
+                                            foreach (var department in @ViewBag.Department)
+                                            {
+                                                <li class="list-group-item">@department.Name</li>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <li class="list-group-item">No department availables</li>
+                                        }
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End modal-->
+
+                <div class="row">
+                    <!-- data table start -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">List Employees</h4>
+                                <div class="data-tables">
+                                    <table id="dataTable" class="text-center">
+                                        <thead class="bg-light text-capitalize">
+                                            <tr>
+                                                <th>Full Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Department</th>
+                                                <th>Role</th>
+                                                <th>Active</th>
+                                                <th>Rating</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                if(Model != null && Model.Any())
+                                                {
+                                                    foreach(var emp in Model)
+                                                    {
+                                                        <tr>
+                                                            <td>@emp.FullName</td>
+                                                            <td>@emp.Email</td>
+                                                            <td>@emp.PhoneNumber</td>
+                                                            <td>@emp.Department.Name</td>
+                                                            <td>@emp.Role.Name</td>
+                                                            <td>
+                                                                <input type="checkbox" id="@emp.EmployeeId" @(emp.IsActived ? "checked" : "") onchange="updateActiveStatus('@emp.EmployeeId', this.checked)">
+                                                            </td>
+                                                            <td>@emp.Rating</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- data table end -->
+                </div>
+            </div>
+        </div>
+        <!-- main content area end -->
+    </div>
+    <!-- page container area end -->
+    <!-- jquery latest version -->
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+    <script src="~/js/jquery.slicknav.min.js"></script>
+
+    <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <!-- others plugins -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+
+    <script>
+        function updateActiveStatus(employeeId, isActive) {
+            employeeId = parseInt(employeeId); // Ép kiểu thành số nguyên
+            $.ajax({
+                url: '/HR/UpdateActive',
+                type: 'POST',
+                data: {
+                    employeeId: employeeId,
+                    isActive: isActive
+                },
+                success: function (result) {
+                    // Xử lý kết quả nếu cần thiết
+                    console.log(result);
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu có
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+    </script>
+
+</body>
